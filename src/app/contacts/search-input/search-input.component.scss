@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  position: relative;
+  padding: 15px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 21px;
+  left: 23px;
+  color: lightslategray;
+}
+
+.search-input {
+  width: calc(100% - 36px);
+  background-color: white;
+  font-size: 14px;
+  padding: 6px 6px 6px 30px;
+  border: 1px solid lightslategray;
+  border-radius: 15px;
+  outline: none;
+}
