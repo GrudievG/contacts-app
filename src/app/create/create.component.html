@@ -1,0 +1,63 @@
+<header class="header">
+  <button type="button" class="go-back-btn" title="Back" (click)="goBack()">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  </button>
+  <h3>New Contact</h3>
+</header>
+<div class="avatar-block">
+  <img class="contact-avatar" src="assets/img/user-avatar.png">
+</div>
+
+<form class="contact-form" [formGroup]="form" (submit)="onSubmit()">
+
+  <div class="form-group" formGroupName="name">
+    <div class="group-caption">
+      <h3>Name</h3>
+    </div>
+    <div class="form-control" [class.invalid]="firstName.invalid && (firstName.touched || firstName.dirty)">
+      <div class="control-label">
+        <label for="first">First</label>
+      </div>
+      <div class="control-input">
+        <input type="text" id="first" formControlName="first" required>
+      </div>
+    </div>
+    <div class="form-control" [class.invalid]="lastName.invalid && (lastName.touched || lastName.dirty)">
+      <div class="control-label">
+        <label for="last">Last</label>
+      </div>
+      <div class="control-input">
+        <input type="text" id="last" formControlName="last">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" formArrayName="phone">
+    <div class="group-caption">
+      <h3>Phones</h3>
+      <button type="button" class="add-phone-btn" (click)="addPhone()">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="form-control"
+         *ngFor="let number of phone.controls; let i=index"
+         [class.invalid]="number.invalid && (number.touched || number.dirty)">
+      <div class="control-label">
+        <label for="phone{{i}}">Number {{ i + 1 }}:</label>
+      </div>
+      <div class="control-input">
+        <input type="tel" id="phone{{i}}" formControlName="{{i}}" required>
+        <button type="button" class="delete-btn"
+                (click)="deleteNumber(i)"
+                *ngIf="phone.controls.length > 1">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button class="submit-btn"
+          [disabled]="form.invalid"
+          [class.disabled]="form.invalid">SAVE</button>
+
+</form>

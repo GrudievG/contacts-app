@@ -3,12 +3,11 @@ html {
 }
 
 body {
-  position: relative;
-  min-height: calc(100% - 60px);
+  min-height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgba(63, 80, 181, .11);
+  background-color: #eff2ff;
 }
 
-.app-view {
-  margin-top: 60px;
+input {
+  outline: none;
 }

@@ -1,7 +1,7 @@
 export class Contact {
   id?: number;
   name: Name;
-  "phone": string[];
+  phone: string[];
 }
 
 interface Name {

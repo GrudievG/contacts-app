@@ -1,4 +1,17 @@
+<header class="header">
+  <h3>All Contacts</h3>
+</header>
 <app-search-input></app-search-input>
 <div class="contacts-block">
-  <app-contact-item *ngFor="let contact of contactList" [contact]="contact"></app-contact-item>
+  <div class="contact-group" *ngFor="let contactGroup of contactList">
+    <div class="group-letter">
+      <span>{{contactGroup.letter}}</span>
+    </div>
+    <div class="contact-list">
+      <app-contact-item *ngFor="let contact of contactGroup.contacts" [contact]="contact"></app-contact-item>
+    </div>
+  </div>
 </div>
+<button type="button" class="add-contact-btn" routerLink="/create">
+  <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+</button>

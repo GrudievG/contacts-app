@@ -11,6 +11,10 @@ import { ContactItemComponent } from './contact-item/contact-item.component';
     CommonModule,
     ContactsRoutingModule
   ],
-  declarations: [ContactsComponent, SearchInputComponent, ContactItemComponent]
+  declarations: [
+    ContactsComponent,
+    SearchInputComponent,
+    ContactItemComponent
+  ]
 })
 export class ContactsModule { }

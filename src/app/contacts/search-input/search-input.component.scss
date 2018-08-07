@@ -1,7 +1,12 @@
 :host {
   display: block;
-  position: relative;
+  position: fixed;
+  top:60px;
+  width: 100%;
   padding: 15px;
+  background-color: #eff2ff;
+  border-bottom: 1px solid #cecfd0;
+  box-sizing: border-box;
 }
 
 .search-icon {

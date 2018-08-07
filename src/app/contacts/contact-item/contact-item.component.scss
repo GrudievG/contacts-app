@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #cecfd0;
+  padding: 15px 0;
+
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #a3a4a5;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.contact-info {
+  margin-left: 15px;
+
+  .contact-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .contact-phone {
+    font-size: .8rem;
+    color: gray;
+  }
+}
