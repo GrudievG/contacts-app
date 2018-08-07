@@ -1,4 +1,8 @@
-<input type="text" class="search-input" placeholder="Search...">
+<input type="text"
+       class="search-input"
+       placeholder="Search..."
+       #searchBox
+       (keyup)="search(searchBox.value)">
 <div class="search-icon">
   <i class="fa fa-search" aria-hidden="true"></i>
 </div>

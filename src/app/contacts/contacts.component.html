@@ -1,7 +1,7 @@
 <header class="header">
   <h3>All Contacts</h3>
 </header>
-<app-search-input></app-search-input>
+<app-search-input (query)="search($event)"></app-search-input>
 <div class="contacts-block">
   <div class="contact-group" *ngFor="let contactGroup of contactList">
     <div class="group-letter">

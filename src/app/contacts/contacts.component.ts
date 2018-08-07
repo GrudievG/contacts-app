@@ -17,4 +17,8 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  search(query) {
+    this.contactList = this.contactsService.searchContacts(query);
+  }
+
 }

@@ -27,6 +27,27 @@ export class ContactsService {
     this.contactList.push(contact);
   }
 
+  searchContacts(searchQuery) {
+    const query = searchQuery.toLowerCase();
+    const filteredList = this.contactList.filter(contact => {
+      const name = contact.name.first.toLowerCase() + ' ' + contact.name.last.toLowerCase()
+      const phoneNumbers = contact.phone;
+      if (name.indexOf(query) !== -1) {
+        return contact;
+      }
+      let phoneMatch = false;
+      phoneNumbers.forEach(number => {
+        if (number.indexOf(query) !== -1) {
+          phoneMatch = true;
+        }
+      });
+      if (phoneMatch) {
+        return contact;
+      }
+    });
+    return this.convert(filteredList);
+  }
+
   convert(contacts) {
     const sorted = this.sort(contacts);
     return this.group(sorted);
