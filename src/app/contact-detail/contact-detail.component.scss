@@ -27,6 +27,12 @@
     background: none;
     cursor: pointer;
   }
+
+  .delete-btn {
+    @extend .go-back-btn;
+    left: auto;
+    right: 15px;
+  }
 }
 
 .avatar-block {

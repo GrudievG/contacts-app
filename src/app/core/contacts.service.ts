@@ -22,15 +22,29 @@ export class ContactsService {
       );
   }
 
+  getContactDetail(id) {
+    const contact = this.contactList.find(el => {
+      return el.id === +id;
+    });
+    return contact;
+  }
+
   addContact(contact) {
     contact.id = this.contactList.length + 1;
     this.contactList.push(contact);
   }
 
+  deleteContact(id) {
+    const contactIndex = this.contactList.findIndex(el => {
+      return el.id === id;
+    });
+    this.contactList.splice(contactIndex, 1);
+  }
+
   searchContacts(searchQuery) {
     const query = searchQuery.toLowerCase();
     const filteredList = this.contactList.filter(contact => {
-      const name = contact.name.first.toLowerCase() + ' ' + contact.name.last.toLowerCase()
+      const name = contact.name.first.toLowerCase() + ' ' + contact.name.last.toLowerCase();
       const phoneNumbers = contact.phone;
       if (name.indexOf(query) !== -1) {
         return contact;

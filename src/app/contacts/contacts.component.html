@@ -8,7 +8,10 @@
       <span>{{contactGroup.letter}}</span>
     </div>
     <div class="contact-list">
-      <app-contact-item *ngFor="let contact of contactGroup.contacts" [contact]="contact"></app-contact-item>
+      <app-contact-item
+        *ngFor="let contact of contactGroup.contacts"
+        [contact]="contact"
+        routerLink="../contact/{{contact.id}}"></app-contact-item>
     </div>
   </div>
 </div>
